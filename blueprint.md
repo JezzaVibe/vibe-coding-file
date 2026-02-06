@@ -21,11 +21,9 @@ This document outlines the design, features, and development plan for an **Asian
 - **Typography:** The 'Roboto' font will be used for clean and readable text.
 - **Interactivity:** Interactive elements will have hover and click effects to enhance the user experience.
 - **Animations:** Card transitions will be animated for a more dynamic feel.
-- **Background:** A food-related, picturesque background to enhance the visual theme.
+- **Background:** A picturesque background to enhance the visual theme, currently featuring the Merlion in Singapore.
 
 ## Current Plan
 
-*   **Objective:** Implement a "Show All" feature.
-*   **Step 1:** Add a "Show All" button to `index.html`.
-*   **Step 2:** Implement the logic in `main.js` to display all food items.
-*   **Step 3:** Update `style.css` to handle the layout of multiple food cards.
+*   **Objective:** Change the background picture to an image of the Merlion in Singapore.
+*   **Step 1:** Update the `style.css` file with the new background image URL.
