@@ -2,27 +2,27 @@ const healthyFoods = [
   {
     name: "Thunder Tea Rice (Lei Cha)",
     description: "A healthy and flavorful Hakka dish featuring a variety of vegetables, tofu, and peanuts served with rice and a savory tea soup.",
-    image: "https://i.imgur.com/8tDDs66.png"
+    image: "https://i.imgur.com/3h43eU1.png"
   },
   {
     name: "Fish Soup",
     description: "A light and nutritious soup made with fresh fish slices, vegetables, and tofu. A popular choice for a healthy lunch.",
-    image: "https://i.imgur.com/ePjDs4V.png"
+    image: "https://i.imgur.com/kDPiJ7S.png"
   },
   {
     name: "Yong Tau Foo",
     description: "A clear soup with a variety of stuffed tofu and vegetables. You can choose your own ingredients, making it a customizable healthy meal.",
-    image: "https://i.imgur.com/Y4V8n4L.png"
+    image: "https://i.imgur.com/GA1kW2B.png"
   },
   {
     name: "Chapati with Dhal",
     description: "A North Indian staple of unleavened flatbread served with lentil curry. It's a good source of protein and fiber.",
-    image: "https://i.imgur.com/O6tXeHN.png"
+    image: "https://i.imgur.com/pWp6JSt.png"
   },
   {
     name: "Chicken Rice (Steamed)",
     description: "Opt for the steamed version for a lower-fat meal. Served with a flavorful broth and chili sauce.",
-    image: "https://i.imgur.com/vH1b7A9.png"
+    image: "https://i.imgur.com/sC5I3t7.png"
   }
 ];
 

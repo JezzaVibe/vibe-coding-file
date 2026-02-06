@@ -24,9 +24,5 @@ This document outlines the design, features, and development plan for a **Singap
 
 ## Current Plan
 
-*   **Objective:** Build the Singaporean Healthy Food Generator.
-*   **Step 1:** Create the basic HTML structure for the main page, including the header, button, and display area.
-*   **Step 2:** Implement the core CSS, including the color palette, typography, and basic layout.
-*   **Step 3:** Create the JavaScript data structure for the healthy food items.
-*   **Step 4:** Develop the `<food-card>` Web Component to display food information.
-*   **Step 5:** Implement the generator logic to randomly select and display a food card when the button is clicked.
+*   **Objective:** Enhance the visual appeal of the food generator by updating the food images.
+*   **Step 1:** Update the `healthyFoods` array in `main.js` with new, high-quality image URLs for each dish.
