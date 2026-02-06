@@ -42,6 +42,9 @@ class HealthyFoodGenerator extends HTMLElement {
         display: block;
         height: 100vh;
         width: 100vw;
+        background-image: url('https://storage.googleapis.com/generative-ai-hackathon/solution-challenge-2024/gemini-101/Singapore-Merlion-Marina-Bay.jpg');
+        background-size: cover;
+        background-position: center;
       }
       .container {
         display: flex;
@@ -49,12 +52,13 @@ class HealthyFoodGenerator extends HTMLElement {
         height: 100%;
         justify-content: center;
         align-items: center;
+        background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent overlay */
       }
       .left-column {
         display: flex;
         flex-direction: column;
         padding: 20px;
-        background: white;
+        background-color: rgba(255, 255, 255, 0.9); /* Make the panel semi-transparent */
         width: 200px;
         align-items: center;
         border-radius: 8px;
@@ -88,10 +92,11 @@ class HealthyFoodGenerator extends HTMLElement {
         flex-grow: 1;
         font-family: sans-serif;
         text-align: center;
-        color: #333; /* Changed to dark color */
+        color: #fff; /* Changed to white for better visibility */
       }
       h1 {
           font-size: 48px;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
       }
       .food-display {
         margin-bottom: 20px;
