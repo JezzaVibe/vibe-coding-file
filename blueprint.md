@@ -9,6 +9,7 @@ This document outlines the design, features, and development plan for an **Asian
 ### Core Functionality
 - **Food Generator:** A primary button that, when clicked, randomly selects and displays a healthy Asian dish based on selected filters.
 - **Surprise Me Button:** A secondary button to get a completely random dish, ignoring all filters.
+- **Show All Button:** A button to display all available food options at once.
 - **Food Database:** A curated list of healthy Asian food items, stored in a JavaScript array. Each item will include a name, image, and a short description.
 - **Display Card:** A Web Component (`<food-card>`) will be used to display the selected food item in a visually appealing card format.
 - **Cuisine Filter:** A dropdown menu to filter the food selection by country or cuisine.
@@ -24,5 +25,7 @@ This document outlines the design, features, and development plan for an **Asian
 
 ## Current Plan
 
-*   **Objective:** Refresh the background picture with a new food picture.
-*   **Step 1:** Update the `style.css` file with a new background image URL.
+*   **Objective:** Implement a "Show All" feature.
+*   **Step 1:** Add a "Show All" button to `index.html`.
+*   **Step 2:** Implement the logic in `main.js` to display all food items.
+*   **Step 3:** Update `style.css` to handle the layout of multiple food cards.

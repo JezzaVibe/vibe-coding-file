@@ -70,6 +70,7 @@ class FoodCard extends HTMLElement {
           overflow: hidden;
           transition: transform 0.3s ease, opacity 0.5s ease-in-out;
           opacity: 0;
+          color: #333;
         }
         .food-card:hover {
           transform: translateY(-5px);
@@ -111,11 +112,13 @@ customElements.define('food-card', FoodCard);
 
 const generateBtn = document.getElementById('generate-btn');
 const surpriseBtn = document.getElementById('surprise-btn');
+const showAllBtn = document.getElementById('show-all-btn');
 const foodContainer = document.getElementById('food-container');
 const cuisineFilter = document.getElementById('cuisine-filter');
 const searchInput = document.getElementById('search-input');
 
 function generateFood(useFilters = true) {
+  foodContainer.innerHTML = ''; // Clear existing content
   let filteredFoods = healthyFoods;
 
   if (useFilters) {
@@ -148,6 +151,20 @@ function generateFood(useFilters = true) {
   `;
 }
 
+function showAllFoods() {
+  foodContainer.innerHTML = ''; // Clear existing content
+  healthyFoods.forEach(food => {
+    const foodCard = `
+      <food-card 
+        name="${food.name}" 
+        description="${food.description}" 
+        image="${food.image}">
+      </food-card>
+    `;
+    foodContainer.innerHTML += foodCard;
+  });
+}
+
 function handleGeneration(useFilters) {
   foodContainer.classList.add('shaking');
   setTimeout(() => {
@@ -158,6 +175,7 @@ function handleGeneration(useFilters) {
 
 generateBtn.addEventListener('click', () => handleGeneration(true));
 surpriseBtn.addEventListener('click', () => handleGeneration(false));
+showAllBtn.addEventListener('click', showAllFoods);
 
 searchInput.addEventListener('input', () => generateFood(true));
 cuisineFilter.addEventListener('change', () => generateFood(true));
