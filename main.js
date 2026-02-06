@@ -4,6 +4,11 @@ class HealthyFoodGenerator extends HTMLElement {
     this.filter = 'all'; // Default filter
     const shadow = this.attachShadow({ mode: 'open' });
 
+    // Create a dedicated background image element
+    const background = document.createElement('img');
+    background.setAttribute('src', 'background.jpg');
+    background.setAttribute('class', 'background-image');
+
     const wrapper = document.createElement('div');
     wrapper.setAttribute('class', 'container');
 
@@ -42,9 +47,17 @@ class HealthyFoodGenerator extends HTMLElement {
         display: block;
         height: 100vh;
         width: 100vw;
-        background-image: url('background.jpg');
-        background-size: cover;
-        background-position: center;
+        position: relative; /* Needed for z-index stacking */
+        overflow: hidden; /* Hide anything that might spill out */
+      }
+      .background-image {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* Position behind all other content */
       }
       .container {
         display: flex;
@@ -52,13 +65,13 @@ class HealthyFoodGenerator extends HTMLElement {
         height: 100%;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.4); /* Subtler overlay */
+        background-color: rgba(0, 0, 0, 0.4);
       }
       .left-column {
         display: flex;
         flex-direction: column;
         padding: 20px;
-        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent panel */
+        background-color: rgba(255, 255, 255, 0.9);
         width: 200px;
         align-items: center;
         border-radius: 8px;
@@ -92,7 +105,7 @@ class HealthyFoodGenerator extends HTMLElement {
         flex-grow: 1;
         font-family: sans-serif;
         text-align: center;
-        color: #fff; /* White text for visibility */
+        color: #fff;
       }
       h1 {
           font-size: 48px;
@@ -120,6 +133,7 @@ class HealthyFoodGenerator extends HTMLElement {
     `;
 
     shadow.appendChild(style);
+    shadow.appendChild(background); // Add the image to the shadow DOM
     shadow.appendChild(wrapper);
     wrapper.appendChild(leftColumn);
     wrapper.appendChild(rightColumn);
