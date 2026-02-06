@@ -24,6 +24,7 @@ This document outlines the design, features, and development plan for an **Asian
 
 ## Current Plan
 
-*   **Objective:** Enhance the visual appeal by refreshing the Asian food picture library.
-*   **Step 1:** Source a new set of high-quality images for the dishes.
-*   **Step 2:** Update the `healthyFoods` array in `main.js` with the new image URLs.
+*   **Objective:** Implement a "Surprise Me" animation for a more engaging user experience.
+*   **Step 1:** Create a CSS animation for the "shuffle" effect.
+*   **Step 2:** Update the JavaScript to trigger the animation on button click.
+*   **Step 3:** Reveal the new food card after the animation completes.

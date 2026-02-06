@@ -84,14 +84,23 @@ const generateBtn = document.getElementById('generate-btn');
 const foodContainer = document.getElementById('food-container');
 
 generateBtn.addEventListener('click', () => {
-  const randomIndex = Math.floor(Math.random() * healthyFoods.length);
-  const randomFood = healthyFoods[randomIndex];
+  // Add the shaking animation
+  foodContainer.classList.add('shaking');
 
-  foodContainer.innerHTML = `
-    <food-card 
-      name="${randomFood.name}" 
-      description="${randomFood.description}" 
-      image="${randomFood.image}">
-    </food-card>
-  `;
+  // Wait for the animation to finish
+  setTimeout(() => {
+    const randomIndex = Math.floor(Math.random() * healthyFoods.length);
+    const randomFood = healthyFoods[randomIndex];
+
+    foodContainer.innerHTML = `
+      <food-card 
+        name="${randomFood.name}" 
+        description="${randomFood.description}" 
+        image="${randomFood.image}">
+      </food-card>
+    `;
+
+    // Remove the shaking class so it can be re-triggered
+    foodContainer.classList.remove('shaking');
+  }, 500); // 500ms matches the animation duration
 });
