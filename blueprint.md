@@ -20,6 +20,7 @@ This document outlines the design, features, and development plan for an **Asian
 - **Typography:** The 'Roboto' font will be used for clean and readable text.
 - **Interactivity:** Interactive elements will have hover and click effects to enhance the user experience.
 - **Animations:** Card transitions will be animated for a more dynamic feel.
+- **Background:** A food-related, picturesque background to enhance the visual theme.
 
 ### Technology Stack
 - **HTML:** Semantic HTML for the application structure.
@@ -28,7 +29,6 @@ This document outlines the design, features, and development plan for an **Asian
 
 ## Current Plan
 
-*   **Objective:** Implement a "Surprise Me" button.
-*   **Step 1:** Add a "Surprise Me!" button to `index.html`.
-*   **Step 2:** Update `main.js` to handle the new button's logic, ignoring filters.
-*   **Step 3:** Add styling for the new button in `style.css`.
+*   **Objective:** Implement a food-related, picturesque background.
+*   **Step 1:** Add a background image to the application.
+*   **Step 2:** Adjust the text colors for better readability against the new background.
