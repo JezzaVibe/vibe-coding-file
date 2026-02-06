@@ -152,6 +152,7 @@ class HealthyFoodGenerator extends HTMLElement {
             btn.classList.remove('active');
         }
     });
+    gtag('event', 'filter_change', { 'food_preference': filter });
     this.generateFood(container);
   }
 
