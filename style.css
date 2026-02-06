@@ -23,12 +23,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-primary);
-  background-color: var(--bg-color);
   color: var(--text-color-dark);
   
-  /* Applying a subtle noise texture to the background for a premium, tactile feel */
-  /* This is a tiny, repeating SVG to minimize performance impact */
-  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.02' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  /* Set the background to the beautiful Merlion image */
+  background-image: url('background.jpg');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Fixes the background during scroll */
+  height: 100vh; /* Full viewport height */
 }
 
 /* General typography enhancements */
