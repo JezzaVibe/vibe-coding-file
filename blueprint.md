@@ -22,13 +22,7 @@ This document outlines the design, features, and development plan for an **Asian
 - **Animations:** Card transitions will be animated for a more dynamic feel.
 - **Background:** A food-related, picturesque background to enhance the visual theme.
 
-### Technology Stack
-- **HTML:** Semantic HTML for the application structure.
-- **CSS:** Modern CSS with CSS Variables, Flexbox for layout, and subtle animations.
-- **JavaScript:** ES Modules, and Web Components for modular and reusable UI elements.
-
 ## Current Plan
 
-*   **Objective:** Implement a food-related, picturesque background.
-*   **Step 1:** Add a background image to the application.
-*   **Step 2:** Adjust the text colors for better readability against the new background.
+*   **Objective:** Refresh the background picture with a new food picture.
+*   **Step 1:** Update the `style.css` file with a new background image URL.
