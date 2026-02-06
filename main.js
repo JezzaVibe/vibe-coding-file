@@ -2,27 +2,50 @@ const healthyFoods = [
   {
     name: "Bibimbap",
     description: "A Korean rice bowl topped with an array of seasoned vegetables, a fried egg, and gochujang sauce. A balanced and colorful meal.",
-    image: "https://i.imgur.com/2O8a7Y4.png"
+    image: "https://i.imgur.com/2O8a7Y4.png",
+    cuisine: "Korean"
   },
   {
     name: "Sushi (Sashimi)",
     description: "Fresh, high-quality raw fish served without rice. It's rich in omega-3 fatty acids and protein.",
-    image: "https://i.imgur.com/gIsy7lV.png"
+    image: "https://i.imgur.com/gIsy7lV.png",
+    cuisine: "Japanese"
   },
   {
     name: "Pho",
     description: "A Vietnamese noodle soup with a flavorful broth, fresh herbs, and lean meat. A light yet satisfying option.",
-    image: "https://i.imgur.com/I2kM3tX.png"
+    image: "https://i.imgur.com/I2kM3tX.png",
+    cuisine: "Vietnamese"
   },
   {
     name: "Tom Yum Soup",
     description: "A hot and sour Thai soup with shrimp, lemongrass, and galangal. Known for its bold flavors and health benefits.",
-    image: "https://i.imgur.com/XM4B3dT.png"
+    image: "https://i.imgur.com/XM4B3dT.png",
+    cuisine: "Thai"
   },
   {
     name: "Miso Soup",
     description: "A traditional Japanese soup made from dashi stock and miso paste. It's light, savory, and packed with probiotics.",
-    image: "https://i.imgur.com/Q21A1cE.png"
+    image: "https://i.imgur.com/Q21A1cE.png",
+    cuisine: "Japanese"
+  },
+  {
+    name: "Kimchi Jjigae",
+    description: "A classic Korean stew made with kimchi, tofu, and meat or seafood. A flavorful and spicy comfort food.",
+    image: "https://i.imgur.com/9C4T9p0.png",
+    cuisine: "Korean"
+  },
+  {
+    name: "Goi Cuon (Spring Rolls)",
+    description: "Fresh Vietnamese spring rolls filled with shrimp, herbs, and rice vermicelli. A light and healthy appetizer.",
+    image: "https://i.imgur.com/6QCM2zJ.png",
+    cuisine: "Vietnamese"
+  },
+  {
+    name: "Green Curry",
+    description: "A sweet and spicy Thai curry with coconut milk, green chilies, and vegetables. A fragrant and flavorful dish.",
+    image: "https://i.imgur.com/gGvJ03v.png",
+    cuisine: "Thai"
   }
 ];
 
@@ -82,25 +105,35 @@ customElements.define('food-card', FoodCard);
 
 const generateBtn = document.getElementById('generate-btn');
 const foodContainer = document.getElementById('food-container');
+const cuisineFilter = document.getElementById('cuisine-filter');
+
+function generateFood() {
+  const selectedCuisine = cuisineFilter.value;
+  const filteredFoods = selectedCuisine === 'all' 
+    ? healthyFoods 
+    : healthyFoods.filter(food => food.cuisine === selectedCuisine);
+
+  if (filteredFoods.length === 0) {
+    foodContainer.innerHTML = "<p>No dishes match this cuisine.</p>";
+    return;
+  }
+
+  const randomIndex = Math.floor(Math.random() * filteredFoods.length);
+  const randomFood = filteredFoods[randomIndex];
+
+  foodContainer.innerHTML = `
+    <food-card 
+      name="${randomFood.name}" 
+      description="${randomFood.description}" 
+      image="${randomFood.image}">
+    </food-card>
+  `;
+}
 
 generateBtn.addEventListener('click', () => {
-  // Add the shaking animation
   foodContainer.classList.add('shaking');
-
-  // Wait for the animation to finish
   setTimeout(() => {
-    const randomIndex = Math.floor(Math.random() * healthyFoods.length);
-    const randomFood = healthyFoods[randomIndex];
-
-    foodContainer.innerHTML = `
-      <food-card 
-        name="${randomFood.name}" 
-        description="${randomFood.description}" 
-        image="${randomFood.image}">
-      </food-card>
-    `;
-
-    // Remove the shaking class so it can be re-triggered
+    generateFood();
     foodContainer.classList.remove('shaking');
-  }, 500); // 500ms matches the animation duration
+  }, 500);
 });
