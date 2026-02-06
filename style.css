@@ -1,0 +1,59 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primary-color: oklch(65% 0.18 140); /* Healthy Green */
+  --accent-color: oklch(75% 0.25 80);  /* Fresh Orange */
+  --text-color: oklch(20% 0.02 260);    /* Dark Grey */
+  --bg-color: oklch(98% 0.01 140);      /* Light, slightly green-tinted background */
+  --card-bg-color: oklch(100% 0 0);     /* White */
+
+  --font-primary: 'Roboto', sans-serif;
+  --shadow-deep: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.15);
+  --shadow-lifted: 0 4px 8px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  text-align: center;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#generate-btn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--card-bg-color);
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-lifted);
+}
+
+#generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-deep);
+}
+
+#food-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
