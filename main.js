@@ -110,22 +110,25 @@ class FoodCard extends HTMLElement {
 customElements.define('food-card', FoodCard);
 
 const generateBtn = document.getElementById('generate-btn');
+const surpriseBtn = document.getElementById('surprise-btn');
 const foodContainer = document.getElementById('food-container');
 const cuisineFilter = document.getElementById('cuisine-filter');
 const searchInput = document.getElementById('search-input');
 
-function generateFood() {
-  const selectedCuisine = cuisineFilter.value;
-  const searchTerm = searchInput.value.toLowerCase();
-
+function generateFood(useFilters = true) {
   let filteredFoods = healthyFoods;
 
-  if (selectedCuisine !== 'all') {
-    filteredFoods = filteredFoods.filter(food => food.cuisine === selectedCuisine);
-  }
+  if (useFilters) {
+    const selectedCuisine = cuisineFilter.value;
+    const searchTerm = searchInput.value.toLowerCase();
 
-  if (searchTerm) {
-    filteredFoods = filteredFoods.filter(food => food.name.toLowerCase().includes(searchTerm));
+    if (selectedCuisine !== 'all') {
+      filteredFoods = filteredFoods.filter(food => food.cuisine === selectedCuisine);
+    }
+
+    if (searchTerm) {
+      filteredFoods = filteredFoods.filter(food => food.name.toLowerCase().includes(searchTerm));
+    }
   }
 
   if (filteredFoods.length === 0) {
@@ -145,13 +148,16 @@ function generateFood() {
   `;
 }
 
-generateBtn.addEventListener('click', () => {
+function handleGeneration(useFilters) {
   foodContainer.classList.add('shaking');
   setTimeout(() => {
-    generateFood();
+    generateFood(useFilters);
     foodContainer.classList.remove('shaking');
   }, 500);
-});
+}
 
-searchInput.addEventListener('input', generateFood);
-cuisineFilter.addEventListener('change', generateFood);
+generateBtn.addEventListener('click', () => handleGeneration(true));
+surpriseBtn.addEventListener('click', () => handleGeneration(false));
+
+searchInput.addEventListener('input', () => generateFood(true));
+cuisineFilter.addEventListener('change', () => generateFood(true));

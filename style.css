@@ -3,6 +3,7 @@
 :root {
   --primary-color: #00c6ff;
   --secondary-color: #0072ff;
+  --tertiary-color: #ff6b6b;
   --background-color: #f0f4f8;
   --text-color: #333;
   --card-shadow: 
@@ -69,8 +70,13 @@ main {
   width: 80%;
 }
 
-#generate-btn {
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+.button-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#generate-btn, #surprise-btn {
   color: white;
   border: none;
   padding: 15px 30px;
@@ -78,14 +84,28 @@ main {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 2cm; /* Updated margin */
-  margin-bottom: 2rem;
+}
+
+#generate-btn {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
 }
 
-#generate-btn:hover {
+#surprise-btn {
+  background: linear-gradient(45deg, var(--tertiary-color), #ff8e53);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+#generate-btn:hover, #surprise-btn:hover {
   transform: scale(1.05);
+}
+
+#generate-btn:hover {
   box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
+}
+
+#surprise-btn:hover {
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
 }
 
 #food-container {
