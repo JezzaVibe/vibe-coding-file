@@ -68,7 +68,8 @@ class FoodCard extends HTMLElement {
           box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.15);
           max-width: 400px;
           overflow: hidden;
-          transition: transform 0.3s ease;
+          transition: transform 0.3s ease, opacity 0.5s ease-in-out;
+          opacity: 0;
         }
         .food-card:hover {
           transform: translateY(-5px);
@@ -98,6 +99,11 @@ class FoodCard extends HTMLElement {
         </div>
       </div>
     `;
+    
+    // Trigger the fade-in animation
+    setTimeout(() => {
+      this.shadowRoot.querySelector('.food-card').style.opacity = 1;
+    }, 10);
   }
 }
 
@@ -106,15 +112,24 @@ customElements.define('food-card', FoodCard);
 const generateBtn = document.getElementById('generate-btn');
 const foodContainer = document.getElementById('food-container');
 const cuisineFilter = document.getElementById('cuisine-filter');
+const searchInput = document.getElementById('search-input');
 
 function generateFood() {
   const selectedCuisine = cuisineFilter.value;
-  const filteredFoods = selectedCuisine === 'all' 
-    ? healthyFoods 
-    : healthyFoods.filter(food => food.cuisine === selectedCuisine);
+  const searchTerm = searchInput.value.toLowerCase();
+
+  let filteredFoods = healthyFoods;
+
+  if (selectedCuisine !== 'all') {
+    filteredFoods = filteredFoods.filter(food => food.cuisine === selectedCuisine);
+  }
+
+  if (searchTerm) {
+    filteredFoods = filteredFoods.filter(food => food.name.toLowerCase().includes(searchTerm));
+  }
 
   if (filteredFoods.length === 0) {
-    foodContainer.innerHTML = "<p>No dishes match this cuisine.</p>";
+    foodContainer.innerHTML = "<p>No dishes match your criteria.</p>";
     return;
   }
 
@@ -137,3 +152,6 @@ generateBtn.addEventListener('click', () => {
     foodContainer.classList.remove('shaking');
   }, 500);
 });
+
+searchInput.addEventListener('input', generateFood);
+cuisineFilter.addEventListener('change', generateFood);

@@ -14,15 +14,21 @@
   </header>
 
   <main>
-    <div class="filter-container">
-      <label for="cuisine-filter">Filter by Cuisine:</label>
-      <select id="cuisine-filter">
-        <option value="all">All</option>
-        <option value="Japanese">Japanese</option>
-        <option value="Korean">Korean</option>
-        <option value="Vietnamese">Vietnamese</option>
-        <option value="Thai">Thai</option>
-      </select>
+    <div class="controls-container">
+      <div class="filter-container">
+        <label for="cuisine-filter">Filter by Cuisine:</label>
+        <select id="cuisine-filter">
+          <option value="all">All</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Korean">Korean</option>
+          <option value="Vietnamese">Vietnamese</option>
+          <option value="Thai">Thai</option>
+        </select>
+      </div>
+      <div class="search-container">
+        <label for="search-input">Search for a dish:</label>
+        <input type="text" id="search-input" placeholder="e.g., Sushi">
+      </div>
     </div>
     <button id="generate-btn">Generate Food</button>
     <div id="food-container"></div>
