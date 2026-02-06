@@ -4,11 +4,6 @@ class HealthyFoodGenerator extends HTMLElement {
     this.filter = 'all'; // Default filter
     const shadow = this.attachShadow({ mode: 'open' });
 
-    // Create a dedicated background image element
-    const background = document.createElement('img');
-    background.setAttribute('src', 'background.jpg');
-    background.setAttribute('class', 'background-image');
-
     const wrapper = document.createElement('div');
     wrapper.setAttribute('class', 'container');
 
@@ -47,17 +42,9 @@ class HealthyFoodGenerator extends HTMLElement {
         display: block;
         height: 100vh;
         width: 100vw;
-        position: relative; /* Needed for z-index stacking */
-        overflow: hidden; /* Hide anything that might spill out */
-      }
-      .background-image {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1; /* Position behind all other content */
+        background-image: url('https://storage.googleapis.com/generative-ai-hackathon/solution-challenge-2024/gemini-101/Singapore-Merlion-Marina-Bay.jpg');
+        background-size: cover;
+        background-position: center;
       }
       .container {
         display: flex;
@@ -65,7 +52,7 @@ class HealthyFoodGenerator extends HTMLElement {
         height: 100%;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.5);
       }
       .left-column {
         display: flex;
@@ -133,7 +120,6 @@ class HealthyFoodGenerator extends HTMLElement {
     `;
 
     shadow.appendChild(style);
-    shadow.appendChild(background); // Add the image to the shadow DOM
     shadow.appendChild(wrapper);
     wrapper.appendChild(leftColumn);
     wrapper.appendChild(rightColumn);
