@@ -2,27 +2,27 @@ const healthyFoods = [
   {
     name: "Bibimbap",
     description: "A Korean rice bowl topped with an array of seasoned vegetables, a fried egg, and gochujang sauce. A balanced and colorful meal.",
-    image: "https://i.imgur.com/2l1kG2b.png"
+    image: "https://i.imgur.com/2O8a7Y4.png"
   },
   {
     name: "Sushi (Sashimi)",
     description: "Fresh, high-quality raw fish served without rice. It's rich in omega-3 fatty acids and protein.",
-    image: "https://i.imgur.com/AS1wO9t.png"
+    image: "https://i.imgur.com/gIsy7lV.png"
   },
   {
     name: "Pho",
     description: "A Vietnamese noodle soup with a flavorful broth, fresh herbs, and lean meat. A light yet satisfying option.",
-    image: "https://i.imgur.com/EMGTJp2.png"
+    image: "https://i.imgur.com/I2kM3tX.png"
   },
   {
     name: "Tom Yum Soup",
     description: "A hot and sour Thai soup with shrimp, lemongrass, and galangal. Known for its bold flavors and health benefits.",
-    image: "https://i.imgur.com/kG5AFjF.png"
+    image: "https://i.imgur.com/XM4B3dT.png"
   },
   {
     name: "Miso Soup",
     description: "A traditional Japanese soup made from dashi stock and miso paste. It's light, savory, and packed with probiotics.",
-    image: "https://i.imgur.com/uTjL2a4.png"
+    image: "https://i.imgur.com/Q21A1cE.png"
   }
 ];
 

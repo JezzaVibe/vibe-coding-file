@@ -24,7 +24,6 @@ This document outlines the design, features, and development plan for an **Asian
 
 ## Current Plan
 
-*   **Objective:** Broaden the theme of the food generator from "Singaporean" to "Asian."
-*   **Step 1:** Update the title and header in `index.html`.
-*   **Step 2:** Diversify the food database in `main.js` with dishes from various Asian cuisines.
-*   **Step 3:** Update the blueprint to reflect the new project scope.
+*   **Objective:** Enhance the visual appeal by refreshing the Asian food picture library.
+*   **Step 1:** Source a new set of high-quality images for the dishes.
+*   **Step 2:** Update the `healthyFoods` array in `main.js` with the new image URLs.
