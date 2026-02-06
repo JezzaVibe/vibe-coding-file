@@ -1,0 +1,11 @@
+/*
+  Global styles for the application.
+  Use this file for styles that apply to the whole page,
+  outside of the web component.
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
