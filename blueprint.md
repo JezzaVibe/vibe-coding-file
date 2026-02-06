@@ -21,9 +21,9 @@ This document outlines the design, features, and development plan for an **Asian
 - **Typography:** The 'Roboto' font will be used for clean and readable text.
 - **Interactivity:** Interactive elements will have hover and click effects to enhance the user experience.
 - **Animations:** Card transitions will be animated for a more dynamic feel.
-- **Background:** A picturesque background to enhance the visual theme, currently featuring the Merlion in Singapore.
+- **Background:** A plain, solid-color background for a clean and minimalist look.
 
 ## Current Plan
 
-*   **Objective:** Change the background picture to an image of the Merlion in Singapore.
-*   **Step 1:** Update the `style.css` file with the new background image URL.
+*   **Objective:** Change the background to a plain, solid color.
+*   **Step 1:** Update the `style.css` file to remove the background image and adjust text colors for readability.
